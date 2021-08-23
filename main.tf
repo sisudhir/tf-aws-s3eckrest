@@ -28,6 +28,7 @@ resource "restapi_object" "create_repository" {
 }
 
 provider "restapi" {
+  alias                = "post_method"
   uri                  = "http://a60156a13057d41a4b0454e5d4a7e0f6-1247086191.us-east-1.elb.amazonaws.com:9200/_snapshot"
   debug                = true
   headers              = {"Content-Type" = "application/json"}
