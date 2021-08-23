@@ -10,7 +10,7 @@ terraform {
 
 
 provider "restapi" {
-  uri                  = "http://192.168.1.93:31677/_snapshot"
+  uri                  = "http://a60156a13057d41a4b0454e5d4a7e0f6-1247086191.us-east-1.elb.amazonaws.com:9200//_snapshot"
   debug                = true
   headers              = {"Content-Type" = "application/json"}
   write_returns_object = true
