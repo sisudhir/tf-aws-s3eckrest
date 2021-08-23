@@ -30,4 +30,5 @@ resource "restapi_object" "create_repository" {
 resource "restapi_object" "restore_repository" {
   object_id = "s3restore"
   path = "/eck-ss/snapshot-2/_restore"
+  data = ""
 }
