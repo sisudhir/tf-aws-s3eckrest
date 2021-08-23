@@ -27,4 +27,7 @@ resource "restapi_object" "create_repository" {
   data = "{\"type\": \"s3\", \"settings\": {\"client\": \"default\", \"bucket\": \"eck-bucket\", \"base_path\": \"eck-ss/\"}}"
 }
 
-
+resource "restapi_object" "restore_repository" {
+  object_id = "s3restore"
+  path = "/eck-ss/snapshot1/_restore"
+}
