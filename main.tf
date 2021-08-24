@@ -43,6 +43,6 @@ provider "restapi" {
 resource "restapi_object" "restore_repository" {
   provider = restapi.post-method
   object_id = "s3restore"
-  path = "/eck-ss/snapshot-3/_restore"
+  path = "/eck-ss/index-8/_restore"
   data = ""
 }
