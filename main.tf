@@ -10,7 +10,7 @@ terraform {
 
 
 provider "restapi" {
-  uri                  = "http://af99ef20df50c47dc810d53b702f703c-588151517.us-east-1.elb.amazonaws.com:9200/_snapshot"
+  uri                  = "http://${var.eckmstr_uri}/_snapshot"
   debug                = true
   headers              = {"Content-Type" = "application/json"}
   write_returns_object = true
@@ -23,8 +23,8 @@ provider "restapi" {
 
 resource "restapi_object" "create_repository" {
   object_id = "s3repo"
-  path = "/eck-ss"
-  data = "{\"type\": \"s3\", \"settings\": {\"client\": \"default\", \"bucket\": \"eck-bucket\", \"base_path\": \"eck-ss/\"}}"
+  path = "/${var.base_path}"
+  data = "{\"type\": \"s3\", \"settings\": {\"client\": \"default\", \"bucket\": \"${var.bucket_name}\", \"base_path\": \"${var.base_path}/\"}}"
 }
 
 #provider "restapi" {
